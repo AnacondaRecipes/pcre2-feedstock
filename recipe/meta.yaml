@@ -1,5 +1,5 @@
 {% set name = "pcre2" %}
-{% set version = "10.35" %}
+{% set version = "version_lookup_failed" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://ftp.pcre.org/pub/pcre/{{ name }}-{{ version }}.tar.bz2
-  sha256: 9ccba8e02b0ce78046cdfb52e5c177f0f445e421059e43becca4359c669d4613
+  sha256: f33c27745f2bd87344be790465ef984a972fd539dc83bd4f61d4242c607ef1ee
 
 build:
   number: 0

@@ -1,5 +1,5 @@
 {% set name = "pcre2" %}
-{% set version = "10.35" %}
+{% set version = "10.37" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://ftp.pcre.org/pub/pcre/{{ name }}-{{ version }}.tar.bz2
-  sha256: 9ccba8e02b0ce78046cdfb52e5c177f0f445e421059e43becca4359c669d4613
+  sha256: 4d95a96e8b80529893b4562be12648d798b957b1ba1aae39606bbc2ab956d270
 
 build:
   number: 0
@@ -35,14 +35,24 @@ test:
     - test -f ${PREFIX}/include/pcre2.h                       # [not win]
     - test -f ${PREFIX}/include/pcre2posix.h                  # [not win]
     - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}        # [not win]
-    - test -f ${PREFIX}/lib/libpcre2-posix.2${SHLIB_EXT}      # [osx]
-    - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}.2      # [linux]
-    - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}.2.0.3  # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-posix.3${SHLIB_EXT}      # [osx]
+    - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}.3      # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}.3.0.0  # [linux]
     - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}            # [not win]
     - test -f ${PREFIX}/lib/libpcre2-8.0${SHLIB_EXT}          # [osx]
     - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}.0          # [linux]
-    - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}.0.10.0      # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}.0.10.2      # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-16${SHLIB_EXT}            # [not win]
+    - test -f ${PREFIX}/lib/libpcre2-16.0${SHLIB_EXT}          # [osx]
+    - test -f ${PREFIX}/lib/libpcre2-16${SHLIB_EXT}.0          # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-16${SHLIB_EXT}.0.10.2      # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-32${SHLIB_EXT}            # [not win]
+    - test -f ${PREFIX}/lib/libpcre2-32.0${SHLIB_EXT}          # [osx]
+    - test -f ${PREFIX}/lib/libpcre2-32${SHLIB_EXT}.0          # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-32${SHLIB_EXT}.0.10.2      # [linux]
     - test -f ${PREFIX}/lib/pkgconfig/libpcre2-8.pc           # [not win]
+    - test -f ${PREFIX}/lib/pkgconfig/libpcre2-16.pc           # [not win]
+    - test -f ${PREFIX}/lib/pkgconfig/libpcre2-32.pc           # [not win]
     - test -f ${PREFIX}/lib/pkgconfig/libpcre2-posix.pc       # [not win]
 
     - if not exist %LIBRARY_INC%\\pcre2.h exit 1                              # [win]

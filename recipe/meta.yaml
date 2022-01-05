@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://ftp.pcre.org/pub/pcre/{{ name }}-{{ version }}.tar.bz2
+  url: https://github.com/PhilipHazel/{{ name }}/releases/download/{{ name }}-{{ version }}/{{ name }}-{{ version }}.tar.bz2
   sha256: 4d95a96e8b80529893b4562be12648d798b957b1ba1aae39606bbc2ab956d270
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=pcre2
     - {{ pin_subpackage("pcre2", max_pin="x.x") }}
@@ -73,6 +73,7 @@ about:
     using the same syntax and semantics as Perl 5. PCRE has its own native API, as well as a set of
     wrapper functions that correspond to the POSIX regular expression API. The PCRE library is
     free, even for building proprietary software.
+  dev_url: https://github.com/PhilipHazel/pcre2
   doc_url: http://www.pcre.org/current/doc/html/
 
 extra:

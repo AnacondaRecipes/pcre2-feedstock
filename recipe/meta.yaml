@@ -1,5 +1,5 @@
 {% set name = "pcre2" %}
-{% set version = "10.37" %}
+{% set version = "10.42" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/PhilipHazel/{{ name }}/releases/download/{{ name }}-{{ version }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: 4d95a96e8b80529893b4562be12648d798b957b1ba1aae39606bbc2ab956d270
+  sha256: 8d36cd8cb6ea2a4c2bb358ff6411b0c788633a2a45dabbf1aeb4b701d1b5e840
 
 build:
   number: 1

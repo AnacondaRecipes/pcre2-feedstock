@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/PCRE2Project/{{ name }}/releases/download/{{ name }}-{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c33b418e3b936ee3153de2c61cc638e7e4fe3156022a5c77d0711bcbb9d64f1f
+  url: https://github.com/PCRE2Project/{{ name }}/archive/refs/tags/{{ name }}-{{ version }}.tar.gz
+  sha256: a8e52a9bd1bca8f51c5c24823adc2a99acb12288e289a6507090c1a4a4815010
 
 build:
   number: 0

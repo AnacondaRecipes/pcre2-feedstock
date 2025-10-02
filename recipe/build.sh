@@ -23,6 +23,7 @@ mkdir build_cmake
 pushd build_cmake
 cmake ${CMAKE_ARGS} \
     -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_STATIC_LIBS=ON \
     -DCMAKE_BUILD_TYPE=release \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
@@ -33,5 +34,15 @@ cmake ${CMAKE_ARGS} \
     ..
 
 ninja
-ninja test
+
+# Skip 'pcre2_grep_test' on linux due to problems in CI envs (locally works correctly):
+#
+# $SRC_DIR/RunGrepTest: line 864: warning: setlocale: LC_CTYPE: cannot change locale (): No such file or directory
+# pcre2grep: Failed to set locale locale.bad (obtained from LC_CTYPE)
+if [[ "$target_platform" == "osx-arm64" ]]; then
+    ctest --rerun-failed --output-on-failure
+else
+    ctest --rerun-failed --output-on-failure -E "pcre2_grep_test"
+fi
+
 ninja install

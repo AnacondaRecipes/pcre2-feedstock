@@ -6,11 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/PCRE2Project/{{ name }}/archive/refs/tags/{{ name }}-{{ version }}.tar.gz
-    sha256: ffde0c6ead457c4f8edcd8f9ce490bbabd30adabdfd179ecaddd320946cf3872
-  - url: https://github.com/zherczeg/sljit/archive/e51eabbfb8eabc6526f56e4e88b29fb10d1ee048.tar.gz
-    sha256: 5caf31959f4c2dfa9fdbaf290b0e16538527d929d5c1c5bd1a3e6df01436c1cf
-    folder: deps/sljit
+  url: https://github.com/PCRE2Project/{{ name }}/archive/refs/tags/{{ name }}-{{ version }}.tar.gz
+  sha256: ffde0c6ead457c4f8edcd8f9ce490bbabd30adabdfd179ecaddd320946cf3872
 
 build:
   number: 0

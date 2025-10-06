@@ -27,8 +27,8 @@ requirements:
     - {{ compiler('c') }}
     - cmake
     - ninja-base
-    - posix   # [win]
-    - m2-sed  # [win]
+    - msys2-posix  # [win]
+    - msys2-sed    # [win]
   host:
     - bzip2
     - zlib

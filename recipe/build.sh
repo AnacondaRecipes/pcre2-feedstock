@@ -33,8 +33,7 @@ cmake ${CMAKE_ARGS} \
     ..
 
 ninja
-echo "=== Listing pcre2 shared libraries ==="
-ls -la *.so* 2>/dev/null || ls -la build_cmake/*.so* 2>/dev/null
+
 # Skip 'pcre2_grep_test' on linux due to problems in CI envs (locally works correctly):
 #
 # $SRC_DIR/RunGrepTest: line 864: warning: setlocale: LC_CTYPE: cannot change locale (): No such file or directory

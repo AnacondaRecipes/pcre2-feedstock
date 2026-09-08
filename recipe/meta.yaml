@@ -1,5 +1,5 @@
 {% set name = "pcre2" %}
-{% set version = "10.46" %}
+{% set version = "10.48" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   - url: https://github.com/PCRE2Project/{{ name }}/archive/refs/tags/{{ name }}-{{ version }}.tar.gz
-    sha256: ffde0c6ead457c4f8edcd8f9ce490bbabd30adabdfd179ecaddd320946cf3872
+    sha256: 38c2a44986d70050f5fc8219901de87fc32784ab271d3c7d4400683a0b76794b
   # Unvendoring not possible due to lack of version tracking in SLJIT project.
   # This dependency provides a feature of significant performance improvements for PCRE2
   # by compiling the regular expression to a block of equivalent native machine code.
-  - url: https://github.com/zherczeg/sljit/archive/e51eabbfb8eabc6526f56e4e88b29fb10d1ee048.tar.gz
-    sha256: 5caf31959f4c2dfa9fdbaf290b0e16538527d929d5c1c5bd1a3e6df01436c1cf
+  - url: https://github.com/zherczeg/sljit/archive/de0259c7aaf36aa40cba8014f3fad3edde9307f9.tar.gz
+    sha256: 256b50b4e96c806fd13fc9b630f6c1ba41b777e7cedfcf406651d062d8260611
     folder: deps/sljit
 
 build:

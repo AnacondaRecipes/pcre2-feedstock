@@ -1,5 +1,5 @@
 {% set name = "pcre2" %}
-{% set version = "10.48" %}
+{% set version = "10.49" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/PCRE2Project/{{ name }}/archive/refs/tags/{{ name }}-{{ version }}.tar.gz
-    sha256: 38c2a44986d70050f5fc8219901de87fc32784ab271d3c7d4400683a0b76794b
+    sha256: 69d04dcddcf9e038aeae8f58b0c07ee5e08abb835ee8daa2bd6acee433dc112c
   # Unvendoring not possible due to lack of version tracking in SLJIT project.
   # This dependency provides a feature of significant performance improvements for PCRE2
   # by compiling the regular expression to a block of equivalent native machine code.
@@ -44,19 +44,19 @@ test:
     - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}                 # [not win]
     - test -f ${PREFIX}/lib/libpcre2-posix.3${SHLIB_EXT}               # [osx]
     - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}.3               # [linux]
-    - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}.3.0.8           # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-posix${SHLIB_EXT}.3.0.9           # [linux]
     - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}                     # [not win]
     - test -f ${PREFIX}/lib/libpcre2-8.0${SHLIB_EXT}                   # [osx]
     - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}.0                   # [linux]
-    - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}.0.16.0              # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-8${SHLIB_EXT}.0.16.1              # [linux]
     - test -f ${PREFIX}/lib/libpcre2-16${SHLIB_EXT}                    # [not win]
     - test -f ${PREFIX}/lib/libpcre2-16.0${SHLIB_EXT}                  # [osx]
     - test -f ${PREFIX}/lib/libpcre2-16${SHLIB_EXT}.0                  # [linux]
-    - test -f ${PREFIX}/lib/libpcre2-16${SHLIB_EXT}.0.16.0             # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-16${SHLIB_EXT}.0.16.1             # [linux]
     - test -f ${PREFIX}/lib/libpcre2-32${SHLIB_EXT}                    # [not win]
     - test -f ${PREFIX}/lib/libpcre2-32.0${SHLIB_EXT}                  # [osx]
     - test -f ${PREFIX}/lib/libpcre2-32${SHLIB_EXT}.0                  # [linux]
-    - test -f ${PREFIX}/lib/libpcre2-32${SHLIB_EXT}.0.16.0             # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-32${SHLIB_EXT}.0.16.1             # [linux]
     - test -f ${PREFIX}/lib/pkgconfig/libpcre2-8.pc                    # [not win]
     - test -f ${PREFIX}/lib/pkgconfig/libpcre2-16.pc                   # [not win]
     - test -f ${PREFIX}/lib/pkgconfig/libpcre2-32.pc                   # [not win]
